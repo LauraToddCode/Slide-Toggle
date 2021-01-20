@@ -1,0 +1,109 @@
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  .container {
+    background-color: #31a9b8;
+    height: 300px;
+    width: 550px;
+    border-radius: 150px;
+    display: grid;
+    place-items: center;
+  }
+  
+  .inset {
+    background-color: #f5be41;
+    height: 250px;
+    width: 500px;
+    border-radius: 125px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inset::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: inset -25px 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  #ball {
+    margin-left: 25px;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #FA26A0;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .quarter {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #F51720;
+    border-top-left-radius: 100%;
+  }
+  
+  .curve {
+    position: absolute;
+    left: 95px;
+    background-color: #F51720;
+    height: 100px;
+    width: 10px;
+    border-radius: 100%;
+  }
+  
+  .cutout {
+    position: absolute;
+    top: 95px;
+    background-color: #FA26A0;
+    height: 10px;
+    width: 100px;
+    border-radius: 100%;
+  }
+  
+  .right {
+    transform: rotate(180deg);
+    left: 100px;
+    top: 100px;
+  }
+  
+  .moveRight {
+    animation: rollRight 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+  }
+  
+  @keyframes rollRight {
+    0% {
+      transform: translate(0, 0) rotate(0);
+      
+    }
+    100% {
+      transform: translate(250px, 0) rotate(180deg);
+    }
+  }
+  
+  .moveLeft {
+    animation: rollLeft 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+  }
+  
+  @keyframes rollLeft {
+    0% {
+      transform: translate(250px, 0) rotate(180deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0);
+    }
+  }
